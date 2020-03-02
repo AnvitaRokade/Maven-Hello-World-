@@ -10,10 +10,14 @@ mvn compile
 java -cp target/classes com.mycompany.app.App
 or...
 
+
+
 cd my-app
 mvn package
 java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 Running mvn clean will get us back to only the source Java and the pom.xml:
+
+
 
 murphy:my-app pdurbin$ mvn clean --quiet
 murphy:my-app pdurbin$ ack -a -f
@@ -33,6 +37,9 @@ murphy:my-app pdurbin$ java -cp target/classes com.mycompany.app.App
 Hello World!
 Running mvn package does a compile and creates the target directory, including a jar:
 
+
+
+
 murphy:my-app pdurbin$ mvn clean --quiet
 murphy:my-app pdurbin$ mvn package > /dev/null
 murphy:my-app pdurbin$ ack -a -f
@@ -49,5 +56,7 @@ murphy:my-app pdurbin$
 murphy:my-app pdurbin$ java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 Hello World!
 Running mvn clean compile exec:java requires http://mojo.codehaus.org/exec-maven-plugin/
+
+
 
 Running java -jar target/my-app-1.0-SNAPSHOT.jar requires http://maven.apache.org/plugins/maven-shade-plugin/
